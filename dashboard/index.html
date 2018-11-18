@@ -31,6 +31,18 @@
               <p>Dashboard</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./manage.html">
+              <i class="material-icons">developer_mode</i>
+              <p>Manage Devices</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./settings.html">
+              <i class="material-icons">settings</i>
+              <p>Settings</p>
+            </a>
+          </li>
           <!-- your sidebar here -->
         </ul>
       </div>
@@ -163,16 +175,14 @@
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="./assets/demo/demo.js"></script>
   <script>
-      var data = {
-                  // A labels array that can contain any sort of values
-                  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-                  // Our series array that contains series objects or in this case series data arrays
-                  series: [
-                    [10, 7, 8, 5, 9]
-                  ]
-                };
-      new Chartist.Line('.ct-chart', data);
-  </script>
+      new Chartist.Line('.ct-chart', {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        series: [[10, 7, 8, 5, 9]]
+        }, {
+          height: Math.max(0,200)+'px',
+          chartPadding: 20,
+        });
+      </script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
