@@ -11,15 +11,29 @@ const BrowserWindow = electron.BrowserWindow;
 
 // Global declaration so that main window is not GC
 let mainWindow;
+let splash;
 
 // Execute after completion of initialization of Electron
 app.on ('ready', function () {
-   // Main screen display. You can specify the width and height of the window
-   mainWindow = new BrowserWindow ({width: 1200, height: 800});
-   mainWindow.loadURL ('file://' + __dirname + '/index.html');
+  // create main browser window
+  mainWindow = new BrowserWindow({
+    titleBarStyle: 'hidden',
+    width: 1920,
+    height: 1080,
+    show: false // don't show the main window
+});
+// create a new `splash`-Window 
+splash = new BrowserWindow({width: 810, height: 610, transparent: true, frame: false, alwaysOnTop: true});
+splash.loadURL(`file://${__dirname}/splash.html`);
+mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-   // Close the application when the window is closed
-   mainWindow.on ('closed', function () {
-     mainWindow = null;
+var delayInMilliseconds = 5000; //1 second
+
+// if main window is ready to show, then destroy the splash window and show up the main window
+mainWindow.once('ready-to-show', () => {
+  setTimeout(function() {
+    splash.destroy();
+     mainWindow.show();
+  }, delayInMilliseconds);
    });
 });
