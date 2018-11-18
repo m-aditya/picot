@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 <body class="dark-edition">
@@ -65,6 +66,75 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">devices</i>
+                      </div>
+                      <p class="card-category">No. of Devices</p>
+                      <h3 class="card-title">5</h3>
+                    </div>
+                    <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">add_circle</i><a href="#" class="info-link">Add a new device</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                        <i class="material-icons">how_to_vote</i>
+                      </div>
+                      <p class="card-category">Bill Due</p>
+                      <h3 class="card-title">₹4,245</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">show_chart</i><a href="#" class="info-link"> Detailed analysis</a>
+                          </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card card-stats">
+                    <div class="card-header card-header-danger card-header-icon">
+                      <div class="card-icon">
+                        <i class="material-icons">power</i>
+                      </div>
+                      <p class="card-category">Units Consumed</p>
+                      <h3 class="card-title">75 KWh</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i><a href="#" class="info-link"> Last 24 Hours</a>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="card card-chart">
+                    <div class="card-header card-header-info">
+                      <div class="ct-chart"></div>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Weekly Consumption</h4>
+                    </div>
+                    <div class="card-footer">
+                      <div class="stats">
+                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+
           <!-- your content here -->
         </div>
       </div>
@@ -76,6 +146,7 @@
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
   <script src="./assets/js/core/jquery.min.js"></script>
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap-material-design.min.js"></script>
@@ -83,8 +154,6 @@
   <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
   <script src="./assets/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -93,6 +162,17 @@
   <script src="./assets/js/material-dashboard.js?v=2.1.0"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="./assets/demo/demo.js"></script>
+  <script>
+      var data = {
+                  // A labels array that can contain any sort of values
+                  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                  // Our series array that contains series objects or in this case series data arrays
+                  series: [
+                    [10, 7, 8, 5, 9]
+                  ]
+                };
+      new Chartist.Line('.ct-chart', data);
+  </script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -255,6 +335,7 @@
       });
     });
   </script>
+  <script>if (window.module) module = window.module;</script>
 </body>
 
 </html>
