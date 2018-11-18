@@ -1,4 +1,4 @@
-# [Material Dashboard]
+# Material Dashboard
 
 ## Licensing
 
